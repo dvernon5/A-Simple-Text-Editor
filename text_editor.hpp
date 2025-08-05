@@ -1,6 +1,7 @@
 #ifndef TEXT_EDITOR_HPP
 #define TEXT_EDITOR_HPP
 
+#include <iostream>
 #include <string>
 #include <stack>
 
