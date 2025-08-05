@@ -7,3 +7,13 @@ std::string TextEditor::append(const std::string& str) {
     text += str;
     return text;
 }
+
+std::string TextEditor::deleteChar(size_t index) {
+    undoStack.push(text);
+    if (index > text.length()) {
+        text = "";
+    } else {
+        text.erase(text.length() - index);
+    }
+    return text;
+}
