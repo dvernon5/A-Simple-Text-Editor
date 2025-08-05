@@ -11,7 +11,7 @@ class TextEditor {
         std::string append(const std::string& str);
         std::string deleteChar(size_t index);
         void printChars(size_t count);
-        void undo();
+        std::string undo();
 
     private:
         std::string text;
