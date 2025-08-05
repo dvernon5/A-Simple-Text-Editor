@@ -17,3 +17,11 @@ std::string TextEditor::deleteChar(size_t index) {
     }
     return text;
 }
+
+void TextEditor::printChars(size_t count) {
+    if (count > text.length()) {
+        std::cerr << "The text is too short.\n";
+    } else {
+        std::cout << text[count - 1] << "\n";
+    }
+}
