@@ -25,3 +25,10 @@ void TextEditor::printChars(size_t count) {
         std::cout << text[count - 1] << "\n";
     }
 }
+
+void TextEditor::undo() {
+    if (!undoStack.empty()) {
+        text = undoStack.top();
+        undoStack.pop();
+    }
+}
