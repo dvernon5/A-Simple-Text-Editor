@@ -30,6 +30,13 @@ class TextEditor {
             }
         }
 
+        void undo() {
+            if (!undoStack.empty()) { 
+                text = undoStack.top();
+                undoStack.pop();
+            }
+        }
+
     private:
         std::string text;
         std::stack<std::string> undoStack;
