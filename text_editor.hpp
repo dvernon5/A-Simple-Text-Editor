@@ -18,4 +18,4 @@ class TextEditor {
         std::stack<std::string> undoStack;
 };
 
-#endif;
+#endif
