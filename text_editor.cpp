@@ -26,9 +26,11 @@ void TextEditor::printChars(size_t count) {
     }
 }
 
-void TextEditor::undo() {
+std::string TextEditor::undo() {
     if (!undoStack.empty()) {
         text = undoStack.top();
         undoStack.pop();
     }
+
+    return text;
 }
