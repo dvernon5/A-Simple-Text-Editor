@@ -3,7 +3,13 @@
 RequestManager::RequestManager() {}
 
 int RequestManager::getQueryCount() {
-    std::cin >> queryCount;
+    std::cout << "Enter number of queries: ";
+    while (!(std::cin >> queryCount) || queryCount <= 0) {
+        std::cerr << "Invalid input. Please enter a positive integer: ";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    }
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear the newline character from the input buffer
 
     return queryCount;
 }
@@ -22,8 +28,8 @@ int RequestManager::getQueryType() {
 
 int RequestManager::getIndex() {
     std::cout << "Enter index: ";
-    while (!(std::cin >> index)) {
-        std::cerr << "Invalid input. Please enter a valid index: ";
+    while (!(std::cin >> index) || index <= 0) {
+        std::cerr << "Invalid input. Please enter a positive integer: ";
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
@@ -61,7 +67,7 @@ void RequestManager::processQueries() {
                 break;
             }
             case 4: {
-                editor.undo();
+                std::cout << editor.undo() << "\n";
                 break;
             }
             default:
