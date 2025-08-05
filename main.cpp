@@ -10,6 +10,15 @@ class TextEditor {
             text += str;
             return text;
         }
+        
+        std::string deleteChar(size_t index) {
+            undoStack.push(text);
+            if (index > text.length()) {
+                text = "";
+            } else {
+                text = text.erase(text.length() - index);
+            }
+        }
 
     private:
         std::string text;
